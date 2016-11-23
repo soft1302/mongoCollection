@@ -14,7 +14,6 @@ import com.mongodb.client.MongoDatabase;
 public class TestMongo {
 
 	public static void main(String[] args) {
-		Datas datas = new Datas();
 		MongoClient client = mongoDBFindAll("114.215", 2, "", "", "");
 		MongoDatabase database = client.getDatabase("lgh");
 		MongoCollection<Document> collection = database.getCollection("collection");
@@ -25,8 +24,6 @@ public class TestMongo {
 		if (client != null) {
 			client.close();
 		}
-
-		System.out.println(datas.toString());
 	}
 
 	private static MongoClient mongoDBFindAll(String ip, int port, String user, String db, String pwd) {
